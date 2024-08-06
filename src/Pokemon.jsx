@@ -8,14 +8,12 @@ export const Pokemon = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
 
-  const API = "https://pokeapi.co/api/v2/pokemon?limit=124";
-  // subscribe to thapa technical youtube channel: https://www.youtube.com/thapatechnical
+  const API = "https://pokeapi.co/api/v2/pokemon?limit=1300";
 
   const fetchPokemon = async () => {
     try {
       const res = await fetch(API);
       const data = await res.json();
-      //   console.log(data);
 
       const detailedPokemonData = data.results.map(async (curPokemon) => {
         const res = await fetch(curPokemon.url);
